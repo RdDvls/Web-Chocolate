@@ -2,7 +2,7 @@ body{
     background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQeTj6YEmKnkpNwWGnO0HxTiqDjTFzU4HUVImCsa81Mi4hXWx-kb9OMCA");
     background-repeat:no-repeat;
     background-position: top right;
-    background-size: 200px 150px;
+    background-size: 400px 200px;
 
     }
 .choc-big-bar {
@@ -12,7 +12,8 @@ body{
     line-height: 100px;
     font-size: 40px;
     text-align: center;
-    background-color: brown;
+    color: white;
+    background-image: url("http://wac.450f.edgecastcdn.net/80450F/929nin.com/files/2012/04/chocolate1-300x200.jpg");
     margin: 5px;
 }
 .choc-small-bar {
@@ -21,8 +22,9 @@ body{
     height:25px;
     line-height: 25px;
     font-size: 30px;
+    color: white;
     text-align: center;
-    background-color: blue;
+    background-image:url("http://media.gettyimages.com/videos/chocolate-bar-turnaround-video-id473161161?s=640x640");
     margin: 5px;
 }
 

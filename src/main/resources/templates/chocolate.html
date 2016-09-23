@@ -33,6 +33,11 @@
         <input type="text" placeholder="Goal" ng-model="goal"/>
         <input type="button" value="Make Chocolate" ng-click="solveChocolate(numSmalls, numBigs, goal)"/>
     </span>
+    <div>
+        <br><br>
+        Chocolate Inventory
+        <br><br>
+    </div>
 
     <div ng-repeat="chocIndex in makeArray(numBigs - finishedChocolate.bigs)">
         <div class="choc-big-bar">{{chocIndex + 1}}</div>
@@ -40,14 +45,15 @@
     <div ng-repeat="chocIndex in makeArray(numSmalls - finishedChocolate.smalls)">
         <div class="choc-small-bar">{{chocIndex + 1}}</div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+
 
     <div ng-repeat="finishedIndex in makeArray(finishedChocolate.bigs)">
-        <div class="choc-small-bar">{{finishedIndex+1}}</div>
+        <div class="choc-big-bar">{{finishedIndex+1}}</div>
     </div>
 
     <div ng-repeat="finishedIndex in makeArray(finishedChocolate.smalls)">
-        <div class="choc-big-bar">{{finishedIndex+1}}</div>
+        <div class="choc-small-bar">{{finishedIndex+1}}</div>
     </div>
 </body>
 </html>
