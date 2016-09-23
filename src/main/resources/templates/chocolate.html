@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ChocolateMakerApp">
+<!--
+{{! changing the mustache delimiter so it doesn't conflict with  }}
+{{! the default angularjs delimeters - https://mustache.github.io/mustache.5.html for more info  }}
+{{=<% %>=}}
+--->
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/styleSheet.css">
+    <link rel="stylesheet" type="text/css" href="styleSheet.css">
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="../static/js/chocolate-controller.js"></script>
+<script src="js/chocolate-controller.js"></script>
+
+
+<body ng-controller="ChocolateController">
+    <h1>
+        Welcome to Clay's Chocolate Factory!
+    </h1>
+        How much chocolate in the inventory?
+    <br><br>
+
+    <span>
+        <input type="text" placeholder="Number of Bigs "  ng-model="numBigs"/>
+        <input type="text" placeholder="Number of Smalls" ng-model="numSmalls"/>
+    </span>
+    <br><br>
+
+    How much chocolate are you trying to make?
+    <br><br>
+    <span>
+        <input type="text" placeholder="Goal" ng-model="goal"/>
+        <input type="button" value="Make Chocolate" ng-click="solveChocolate(numSmalls, numBigs, goal)"/>
+    </span>
+
+    <div ng-repeat="chocIndex in makeArray(numBigs - finishedChocolate.bigs)">
+        <div class="choc-big-bar">{{chocIndex + 1}}</div>
+    </div>
+    <div ng-repeat="chocIndex in makeArray(numSmalls - finishedChocolate.smalls)">
+        <div class="choc-small-bar">{{chocIndex + 1}}</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div ng-repeat="finishedIndex in makeArray(finishedChocolate.bigs)">
+        <div class="choc-small-bar">{{finishedIndex+1}}</div>
+    </div>
+
+    <div ng-repeat="finishedIndex in makeArray(finishedChocolate.smalls)">
+        <div class="choc-big-bar">{{finishedIndex+1}}</div>
+    </div>
+</body>
+</html>
