@@ -17,10 +17,14 @@ angular.module("ChocolateMakerApp",[])
             $http.get("http://localhost:8080/chocolate.json?numSmall=" + numSmalls + "&numBig=" + numBigs + "&goal=" + goal)
                 .then(
                     function success(response){
+                        if(hasSolution == true){
                             console.log(response.data);
                             console.log("Adding data to scope");
                             $scope.finishedChocolate = response.data;
                             console.log($scope.finishedChocolate);
+                        } else if (hasSolution != true){
+                            console.log("Unable to make Chocolate");
+                        }
                     },
                     function error(response){
                             console.log("Unable to get data");

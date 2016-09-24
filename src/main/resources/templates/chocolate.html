@@ -15,19 +15,25 @@
 
 
 <body ng-controller="ChocolateController">
-    <h1>
-        Welcome to Clay's Chocolate Factory!
-    </h1>
-        How much chocolate in the inventory?
-    <br><br>
-
+   <div>
+       <h1>
+           Welcome to Clay's Chocolate Factory!
+       </h1>
+       <br>
+       <ul>
+           <li>"Make chocolate with big bars (5g) and small bars(1g)</li>
+           <li>"Must enter at least 5g or one big bar</li>
+       </ul>
+       How much chocolate in the inventory?
+       <br><br>
+   </div>
     <span>
         <input type="text" placeholder="Number of Bigs "  ng-model="numBigs"/>
         <input type="text" placeholder="Number of Smalls" ng-model="numSmalls"/>
     </span>
     <br><br>
 
-    How much chocolate are you trying to make?
+    How much chocolate would you like to make?
     <br><br>
     <span>
         <input type="text" placeholder="Goal" ng-model="goal"/>
@@ -39,6 +45,7 @@
         <br><br>
     </div>
 
+
     <div ng-repeat="chocIndex in makeArray(numBigs - finishedChocolate.bigs)">
         <div class="choc-big-bar">{{chocIndex + 1}}</div>
     </div>
@@ -46,7 +53,9 @@
         <div class="choc-small-bar">{{chocIndex + 1}}</div>
     </div>
     <br><br><br><br><br><br><br><br><br>
+    <script>
 
+    </script>
 
     <div ng-repeat="finishedIndex in makeArray(finishedChocolate.bigs)">
         <div class="choc-big-bar">{{finishedIndex+1}}</div>
