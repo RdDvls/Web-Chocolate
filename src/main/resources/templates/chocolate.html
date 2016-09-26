@@ -28,16 +28,16 @@
        <br><br>
    </div>
     <span>
-        <input type="text" placeholder="Number of Bigs "  ng-model="numBigs"/>
-        <input type="text" placeholder="Number of Smalls" ng-model="numSmalls"/>
+        <input type="text" placeholder="Number of Bigs "  ng-model="container.numBigs"/>
+        <input type="text" placeholder="Number of Smalls" ng-model="container.numSmalls"/>
     </span>
     <br><br>
 
     How much chocolate would you like to make?
     <br><br>
     <span>
-        <input type="text" placeholder="Goal" ng-model="goal"/>
-        <input type="button" value="Make Chocolate" ng-click="solveChocolate(numSmalls, numBigs, goal)"/>
+        <input type="text" placeholder="Goal" ng-model="container.goal"/>
+        <input type="button" value="Make Chocolate" ng-click="solveChocolate(container.numSmalls, container.numBigs, container.goal)"/>
     </span>
     <div>
         <br><br>
@@ -46,23 +46,26 @@
     </div>
 
 
-    <div ng-repeat="chocIndex in makeArray(numBigs - finishedChocolate.bigs)">
+    <div ng-repeat="chocIndex in makeArray(container.numBigs)">
         <div class="choc-big-bar">{{chocIndex + 1}}</div>
     </div>
-    <div ng-repeat="chocIndex in makeArray(numSmalls - finishedChocolate.smalls)">
+    <div ng-repeat="chocIndex in makeArray(container.numSmalls)">
         <div class="choc-small-bar">{{chocIndex + 1}}</div>
     </div>
     <br><br><br><br><br><br><br><br><br>
-    <script>
-
-    </script>
-
+   <span ng-if="solveChocolate.hasSolution == false">
+           <h1>
+               NOT ENOUGH CHOCOLATE
+           </h1>
+   </span>
+    <span ng-if="finishedChocolate.hasSolution == true">
     <div ng-repeat="finishedIndex in makeArray(finishedChocolate.bigs)">
         <div class="choc-big-bar">{{finishedIndex+1}}</div>
     </div>
 
-    <div ng-repeat="finishedIndex in makeArray(finishedChocolate.smalls)">
-        <div class="choc-small-bar">{{finishedIndex+1}}</div>
-    </div>
+        <div ng-repeat="finishedIndex in makeArray(finishedChocolate.smalls)">
+            <div class="choc-small-bar">{{finishedIndex+1}}</div>
+        </div>
+    </span>
 </body>
 </html>
