@@ -14,8 +14,9 @@ angular.module("ChocolateMakerApp",[])
 
         $scope.solveChocolate = function(numSmalls, numBigs, goal){
             console.log("About to make chocolate");
+            $http.get("http://makechocolatespringheroku.herokuapp.com/chocolate.json?numSmall=" + $scope.container.numSmalls + "&numBig=" + $scope.container.numBigs + "&goal=" + $scope.container.goal)
 
-            $http.get("http://localhost:8080/chocolate.json?numSmall=" + $scope.container.numSmalls + "&numBig=" + $scope.container.numBigs + "&goal=" + $scope.container.goal)
+//            $http.get("http://localhost:8080/chocolate.json?numSmall=" + $scope.container.numSmalls + "&numBig=" + $scope.container.numBigs + "&goal=" + $scope.container.goal)
                 .then(
                     function success(response){
                             console.log(response.data);
